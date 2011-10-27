@@ -4,7 +4,7 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('songs.views',
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
     # url(r'^mysite/', include('mysite.foo.urls')),
@@ -13,7 +13,8 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^polls/', include('polls.urls')),
-    (r'^songs/', include('songs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    (r'^$', 'index'),
+    (r'^(?P<song_id>\d+)/$', 'detail'),
+    (r'^(?P<song_id>\d+)/results/$', 'results'),
+    (r'^(?P<song_id>\d+)/vote/$', 'vote'),
 )

@@ -1,0 +1,9 @@
+{% if latest_song_list %}
+    <ul>
+    {% for song in latest_song_list %}
+        <li><a href="/songs/{{ song.id }}/">{{ song.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No songs are available.</p>
+{% endif %}
