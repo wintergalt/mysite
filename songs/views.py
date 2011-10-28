@@ -7,7 +7,8 @@ from songs.models import Song
 
 def index(request):
     latest_song_list = Song.objects.all().order_by('title')[:5]
-    return render_to_response('songs/index.html',{'latest_song_list':latest_song_list})
+    return render_to_response('songs/index.html',{'latest_song_list':latest_song_list},
+                              context_instance=RequestContext(request))
 
 def detail(request,song_id):
     s = get_object_or_404(Song,pk=song_id)

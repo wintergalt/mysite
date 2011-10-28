@@ -1,4 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.views.static import *
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -15,6 +17,4 @@ urlpatterns = patterns('songs.views',
     # Uncomment the next line to enable the admin:
     (r'^$', 'index'),
     (r'^(?P<song_id>\d+)/$', 'detail'),
-    (r'^(?P<song_id>\d+)/results/$', 'results'),
-    (r'^(?P<song_id>\d+)/vote/$', 'vote'),
 )

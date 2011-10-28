@@ -4,6 +4,8 @@ from django.contrib import admin
 class SongAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['title']}),
+        ('Artist', {'fields':['artist']}),
+        ('Body', {'fields':['body']}),
         ('Date information', {'fields': ['pub_date']}),
     ]
     list_display = ('title','pub_date','artist')

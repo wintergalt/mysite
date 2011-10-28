@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{MEDIA_URL}}style.css?{% now "U" %}" />
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <h1>Songs Collection</h1>
+    <img src="{{MEDIA_URL}}test-static.jpg"/>
+    {% block content %}{% endblock %}
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+</html>
