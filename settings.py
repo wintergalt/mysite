@@ -164,5 +164,5 @@ LOGGING = {
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.media',
-    'django.contrib.auth.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',    
 )

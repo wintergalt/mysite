@@ -3,10 +3,24 @@
 <head>
     <link rel="stylesheet" href="{{MEDIA_URL}}style.css?{% now "U" %}" />
     <title>{% block title %}{% endblock %}</title>
+    
+    <link type="text/css" href="{{MEDIA_URL}}menu.css" rel="stylesheet" />
+    <script type="text/javascript" src="{{MEDIA_URL}}menu.js"></script>
+    
+    <script type="text/javascript" src="{{MEDIA_URL}}jquery-1.6.4.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+          $("a").click(function() {
+            alert("Hello world!");
+          });
+        });
+        
+    </script>
 </head>
 <body>
     <h1>Songs Collection</h1>
-    <img src="{{MEDIA_URL}}test-static.jpg"/>
+    {% include "songs/navmenu.html" %}
     {% block content %}{% endblock %}
     {% block footer %}
     <hr>
