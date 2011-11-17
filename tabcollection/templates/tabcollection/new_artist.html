@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}New Artist{% endblock %}
+
+{% block content %}
+
+<form action="/tabcollection/new-artist-submit/" method="post">
+	{% csrf_token %}
+	<p>Name: <input type="text" name="artistName"></p>
+	<input type="submit" value="Submit">
+</form>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Tab Collection{% endblock %}
+
+{% block content %}
+
+	<p>You searched for: <strong>{{ search_criteria }}</strong></p>
+
+    {% if songs %}
+    	<p class="songArtist">Songs ({{ songs|length }})</p>
+        <ul>
+        {% for song in songs %}
+            <li class="listText"><a class="listText" href="/tabcollection/song/{{ song.id }}/">{{ song.title }}</a> (<a class="listText" 
+            href="/tabcollection/artist/{{ song.artist.id }}/">{{ song.artist.name }}</a>)</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p class="songArtist">No songs matched your search criteria.</p>
+    {% endif %}
+
+    {% if artists %}
+    	<p class="songArtist">Artists ({{ artists|length }})</p>
+        <ul>
+        {% for artist in artists %}
+            <li><a href="/tabcollection/artist/{{ artist.id }}/">{{ artist.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p class="songArtist">No artists matched your search criteria.</p>
+    {% endif %}
+    
+{% endblock %}

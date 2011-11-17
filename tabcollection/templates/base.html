@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{MEDIA_URL}}style.css?{% now "U" %}" />
+    <title>{% block title %}{% endblock %}</title>
+    
+    <link type="text/css" href="{{MEDIA_URL}}menu.css" rel="stylesheet" />
+    <script type="text/javascript" src="{{MEDIA_URL}}menu.js"></script>
+    
+    <script type="text/javascript" src="{{MEDIA_URL}}jquery-1.6.4.js"></script>
+    <script type="text/javascript">
+        
+        
+    </script>
+</head>
+<body class="listText">
+    <a href="/tabcollection/" style="text-decoration:none"><h1>Tab Collection</h1></a>
+    {% include "tabcollection/navmenu.html" %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+    <hr>
+    <p class="footer">Copyright {% now "Y" %}</p>
+    {% endblock %}
+</body>
+</html>

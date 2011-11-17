@@ -1,0 +1,34 @@
+- model: tabcollection.Tag
+  pk: 1
+  fields:
+    name: acoustic
+    
+- model: tabcollection.Tag
+  pk: 2
+  fields:
+    name: electric
+    
+- model: tabcollection.Artist
+  pk: 1
+  fields:
+    name: SRV
+    
+- model: tabcollection.Artist
+  pk: 2
+  fields:
+    name: Jimmy Reed
+    
+- model: tabcollection.Song
+  pk: 1
+  fields:
+    title: Hard to be
+    body: Its hard to be...
+    artist: 1
+    
+- model: tabcollection.Song
+  pk: 2
+  fields:
+    title: Big Boss Man
+    body: You wont let me stop
+    artist: 2
+    tags: [1,2]

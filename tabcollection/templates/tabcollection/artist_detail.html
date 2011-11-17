@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Artist detail{% endblock %}
+
+{% block content %}
+
+    <p class="artistName">{{ artist.name }}</p>
+    <br/>
+    {% if songs %}
+    	Found {{ songs|length }} song{{ songs|pluralize }}.
+        <ul>
+        {% for song in songs %}
+            <li><a href="/tabcollection/song/{{ song.id }}/">{{ song.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No songs matched your search criteria.</p>
+    {% endif %}
+    <br/>
+
+{% endblock %}

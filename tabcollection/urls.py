@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('tabcollection.views',
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
     # url(r'^mysite/', include('mysite.foo.urls')),
@@ -15,10 +15,10 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^polls/', include('polls.urls')),
-    (r'^tabcollection/', include('tabcollection.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-    # Required to make static serving work 
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', 
-        {'document_root': settings.MEDIA_ROOT}),
+    (r'^$', 'index'),
+    (r'^song/(?P<song_id>\d+)/$', 'song_detail'),
+    (r'^artist/(?P<artist_id>\d+)/$', 'artist_detail'),
+    (r'^new-artist-form/$', 'new_artist_form'),
+    (r'^new-artist-submit/$', 'new_artist_submit'),
+    (r'^search/$', 'search'),
 )
