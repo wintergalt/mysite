@@ -5,7 +5,6 @@ from django.shortcuts import render_to_response, get_object_or_404
 from tabcollection.models import Song, Artist
 
 def index(request):
-    # do the search
     return render_to_response('tabcollection/index.html', context_instance=RequestContext(request))
 
 def latest(request):
