@@ -38,12 +38,10 @@ def search(request):
 		return HttpResponse(message)
 
 def new_artist_form(req):
-	print('Executing new_artist_form')
 	return render_to_response('tabcollection/new_artist.html', {}, 
 								context_instance=RequestContext(req))
 
 def new_artist_submit(req):
-	print('Executing new_artist_submit')
 	if 'artistName' in req.POST and req.POST['artistName']:
 		name_param = req.POST['artistName']
 		a = Artist(name=name_param)
