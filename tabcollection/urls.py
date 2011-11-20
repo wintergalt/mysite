@@ -20,5 +20,7 @@ urlpatterns = patterns('tabcollection.views',
     (r'^artist/(?P<artist_id>\d+)/$', 'artist_detail'),
     (r'^new-artist-form/$', 'new_artist_form'),
     (r'^new-artist-submit/$', 'new_artist_submit'),
+    (r'^new-song-form/$', 'new_song_form'),
+    (r'^new-song-submit/$', 'new_song_submit'),
     (r'^search/$', 'search'),
 )

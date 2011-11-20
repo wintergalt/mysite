@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
 from tabcollection.models import Song, Artist
+from forms import SongForm
 
 def index(request):
     return render_to_response('tabcollection/index.html', context_instance=RequestContext(request))
@@ -49,3 +50,17 @@ def new_artist_submit(req):
 	else:
 		message = 'You submitted an empty form'
 		return HttpResponse(message)
+
+def new_song_form(req):
+	form = SongForm()
+	return render_to_response('tabcollection/new_song.html', { 'form': form }, 
+								context_instance=RequestContext(req))
+def new_song_submit(req):
+	if req.method == 'POST':
+		form = SongForm(req.POST)
+		if form.is_valid():
+			form.save()
+			return index(req)
+		else:
+			return render_to_response('tabcollection/new_song.html', { 'form': form }, 
+								context_instance=RequestContext(req))

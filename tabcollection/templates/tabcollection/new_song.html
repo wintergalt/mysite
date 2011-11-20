@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}New Artist{% endblock %}
+
+{% block content %}
+
+<form action="/tabcollection/new-song-submit/" method="post">
+	{% csrf_token %}
+	<table>
+		{{ form.as_table }}
+	</table>
+	<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
