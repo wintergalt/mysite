@@ -8,15 +8,15 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'mysite.views.home', name='home'),
     # url(r'^mysite/', include('mysite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^polls/', include('polls.urls')),
-    (r'^tabcollection/', include('tabcollection.urls')),
+    (r'^polls/', include('mysite.polls.urls')),
+    # (r'^/', include('mysite.tabcollection.urls')),
+    (r'^tabcollection/', include('mysite.tabcollection.urls')),
     url(r'^admin/', include(admin.site.urls)),
     # Required to make static serving work 
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', 

@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.shortcuts import render_to_response, get_object_or_404
-from tabcollection.models import Song, Artist
+from mysite.tabcollection.models import Song, Artist
 from forms import SongForm
 
 def index(request):

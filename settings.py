@@ -16,7 +16,6 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        #'NAME': '/home/dromoli/workspace-python/mysite/mysite-db.sqlite3', # Or path to database file if using sqlite3.
         'NAME': os.path.join(SITE_ROOT, 'mysite-db.sqlite3'),
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -25,7 +24,6 @@ DATABASES = {
     },
     'tabcollection': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        #'NAME': '/home/dromoli/workspace-python/mysite/tabcollection/tabcollection-db.sqlite3', # Or path to database file if using sqlite3.
         'NAME': os.path.join(SITE_ROOT, 'tabcollection/tabcollection-db.sqlite3'),
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -120,8 +118,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/dromoli/workspace-python/mysite/polls/templates',
-    #'/home/dromoli/workspace-python/mysite/songs/templates',
+    'mysite/polls/templates',
+    'mysite/songs/templates',
 )
 
 INSTALLED_APPS = (
@@ -130,8 +128,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'polls',
-    'tabcollection',
+    #'polls',
+    'mysite.tabcollection',
     #'django.contrib.messages',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',

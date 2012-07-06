@@ -1,4 +1,4 @@
-from tabcollection.models import Song
+from mysite.tabcollection.models import Song
 from django.contrib import admin
 
 class SongAdmin(admin.ModelAdmin):
