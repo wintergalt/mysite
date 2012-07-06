@@ -118,8 +118,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'mysite/polls/templates',
-    'mysite/songs/templates',
+    'mysite/tabcollection/templates',
 )
 
 INSTALLED_APPS = (
@@ -128,7 +127,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    #'polls',
     'mysite.tabcollection',
     #'django.contrib.messages',
     # Uncomment the next line to enable the admin:
