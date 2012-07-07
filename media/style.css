@@ -1,3 +1,22 @@
+* {
+	margin: 10;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -92px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push {
+	height: 92px; /* .push must be the same height as .footer */
+}
+        
 h1 { color:#5E5E5E;
   font-family: Trebuchet MS;
   font-size: 42px;
@@ -28,8 +47,8 @@ h1 { color:#5E5E5E;
 }
 
 .footer {
-  color:#5E5E5E;
-  font-family: Trebuchet MS;
-  font-size: 10px;
-  text-align: center;
+    position: relative;
+    margin-top: -80px; /* negative value of footer height */
+    height: 80px;
+    text-align: center;
 }

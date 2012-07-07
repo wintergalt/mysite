@@ -14,12 +14,13 @@
     </script>
 </head>
 <body class="listText">
-    <a href="/tabcollection/" style="text-decoration:none"><h1>Tab Collection</h1></a>
-    {% include "tabcollection/navmenu.html" %}
-    {% block content %}{% endblock %}
-    {% block footer %}
-    <hr>
-    <p class="footer">Copyright {% now "Y" %}</p>
-    {% endblock %}
+	<div class='wrapper'>
+	    <a href="/tabcollection/" style="text-decoration:none"><h1>Tab Collection</h1></a>
+	    {% include "tabcollection/navmenu.html" %}
+	    <br />
+	    {% block content %}{% endblock %}
+	    <div class="push"></div>
+    </div>
+    <div class="footer">Copyright {% now "Y" %}</div>
 </body>
 </html>

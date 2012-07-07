@@ -14,8 +14,6 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^polls/', include('mysite.polls.urls')),
-    # (r'^/', include('mysite.tabcollection.urls')),
     (r'^tabcollection/', include('mysite.tabcollection.urls')),
     url(r'^admin/', include(admin.site.urls)),
     # Required to make static serving work 
