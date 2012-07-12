@@ -55,12 +55,21 @@ def new_song_form(req):
 	form = SongForm()
 	return render_to_response('tabcollection/new_song.html', { 'form': form }, 
 								context_instance=RequestContext(req))
+    
 def new_song_submit(req):
 	if req.method == 'POST':
-		form = SongForm(req.POST)
-		if form.is_valid():
-			form.save()
-			return index(req)
-		else:
-			return render_to_response('tabcollection/new_song.html', { 'form': form }, 
+		form = SongForm(req.POST, req.FILES)
+        print req
+        if form.is_valid():
+            handle_uploaded_mp3(req.FILES['mp3_file'])
+            form.save()
+            return index(req)
+        else:
+            print 'form is not valid'
+            return render_to_response('tabcollection/new_song.html', { 'form': form }, 
 								context_instance=RequestContext(req))
+
+def handle_uploaded_mp3(f):
+    with open(f.name, 'w') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)

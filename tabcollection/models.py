@@ -22,6 +22,7 @@ class Song(models.Model):
     year = models.IntegerField(null=True)
     tags = models.ManyToManyField(Tag)
     pub_date = models.DateTimeField(default=datetime.datetime.now())
+    mp3_file = models.FileField(upload_to='mp3')
     
     def __unicode__(self):
         return '{0} - {1}'.format(self.title,self.artist)

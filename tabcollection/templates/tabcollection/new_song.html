@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<form action="/tabcollection/new-song-submit/" method="post">
+<form action="/tabcollection/new-song-submit/" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 	<table>
 		{{ form.as_table }}
